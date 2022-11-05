@@ -1,0 +1,26 @@
+server:
+  port: 8301
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: cinema-service
+  datasource:
+    url: jdbc:mysql://192.168.147.129:3306/mooc_meetingfilm?characterEncoding=utf-8&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    filters: log4j,wall,mergeStat
+
+mybatis-plus:
+  mapper-locations: classpath*:com/mooc/meetingfilm/**/xml/*Mapper.xml
+  global-config:
+    id-type: 0
+    db-column-underline: false
+    refresh-mapper: true
+
+logging:
+  config: classpath:logback.xml

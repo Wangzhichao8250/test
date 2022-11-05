@@ -1,0 +1,19 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+    #以IP地址注册到服务中心、相互注册使用IP地址
+    prefer-ip-address: true
+  client:
+    #是否允许注册
+    register-with-eureka: false
+    #注册情况
+    fetch-registry: false
+  service-url:
+    #具体访问地址
+    defaultZone: http://localhost:8761/eureka/
+
+logging:
+  config: classpath:logback.xml
